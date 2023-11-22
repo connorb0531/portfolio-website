@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buckley Portfolio</title>
+    <link rel="stylesheet" href="../css/top-nav.css">
+    <link rel="stylesheet" href="../css/center-container.css">
+    <link rel="stylesheet" href="../css/nav-pages.css">
+    <link rel="stylesheet" href="../css/technical-skills-main.css">
+    <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <script src="../javascript/top-nav.js"></script>
+    <div class="top-container">
+        <div class="top-nav-links">
+            <a onmouseover="navPage('linkedin')" onmouseleave="resetPage('linkedin')" href="https://www.linkedin.com/in/connor-buckley-b36772272/" class="fa fa-linkedin" target="_blank"></a>
+            <a onmouseover="navPage('github')" onmouseleave="resetPage('github')" href="https://github.com/connorb0531" class="fa fa-github" target="_blank"> </a>
+            <a onmouseover="navPage('instagram')" onmouseleave="resetPage('instagram')" href="https://www.instagram.com/connorabuckley/" class="fa fa-instagram" target="_blank"></a>     
+        </div>
+        <div class="top-nav-header">
+            <h1>Connor Buckley</h1>
+        </div>
+        
+        
+    </div>
+    <div class="center-container">
+        <div class="top-nav-pages">
+            <div class="linkedin-page">
+                <h2>Lets connect.</h2>
+            </div>
+            <div class="github-page">
+                <h2>Have any project ideas?</h2>
+            </div>
+            <div class="instagram-page">
+                <h2>Check out my lastest posts!</h2>
+            </div>
+        </div>
+        <section class="portfolio-main">
+            <div class="left-column">
+                <h1>Who am I?</h1>
+                <ul>
+                    <li>Student at San Diego Mesa College</li>
+                    <li>Pursuing Computer Science for Transfer</li>
+                    <li>Goal is to become Fullstack Software Engineer</li>
+                    <li>Advert fan of Tolkien's Lord of the Rings</li>
+                </ul>
+                <button onclick="scrollDown()" id="scroll-button">Check out technical skills</button>
+                
+            </div>
+            <div class="right-column">
+                <img id="picture" src="../resources/IMG_0373.JPG" href="https://www.linkedin.com/in/connor-buckley-b36772272/" target="_blank">
+            </div>
+            
+        </section>
+        <section class="technical-skills">
+            <div id="technical-skills-heading">Technical Skills</div>
+            <div class="technical-skills-row">
+                <h2 class="technical-skills-subheading">Languages</h2>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+                
+            </div>
+            <div class="technical-skills-row">
+                <h2 class="technical-skills-subheading">Frameworks/Developer Tools</h2>
+                
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" />
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>

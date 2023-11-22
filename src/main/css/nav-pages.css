@@ -1,0 +1,19 @@
+.top-nav-pages > * {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: none;
+    color: white;
+    font-size: 55px;
+}
+
+.linkedin-page {
+    background-color: #0A66C2;
+}
+.github-page {
+    background-color: #333;
+}
+.instagram-page {
+    background-color: #125688;
+}
+
