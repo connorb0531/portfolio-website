@@ -7,17 +7,17 @@ export default function Home() {
           Hello, I'm Connor Buckley
         </h1>
         <div className="text-xl sm:text-2xl md:text-3xl">
-            <h2>
+          <h2>
             Computer Science major at{' '}
             <span className="relative inline-block font-bold group">
-                {/* SJSU letters (the actual hover target) */}
-                <span className="text-blue-600">S</span>
-                <span className="text-yellow-400">J</span>
-                <span className="text-blue-600">S</span>
-                <span className="text-yellow-400">U</span>
+              {/* SJSU letters (the actual hover target) */}
+              <span className="text-blue-600">S</span>
+              <span className="text-yellow-400">J</span>
+              <span className="text-blue-600">S</span>
+              <span className="text-yellow-400">U</span>
 
-                {/* "Go Spartans!" only appears when SJSU is hovered */}
-                <span
+              {/* "Go Spartans!" only appears when SJSU is hovered */}
+              <span
                 className="
                     absolute top-0 left-full  whitespace-nowrap
                     opacity-0 translate-x-0
@@ -25,11 +25,11 @@ export default function Home() {
                     group-hover:opacity-100 group-hover:translate-x-2
                     transition-all duration-300 pointer-events-none
                 "
-                >
+              >
                 ... Go Spartans!
-                </span>
+              </span>
             </span>
-            </h2>
+          </h2>
 
         </div>
 
