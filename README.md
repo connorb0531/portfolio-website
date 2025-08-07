@@ -16,6 +16,7 @@
     npm install
     npm install -D tailwindcss postcss autoprefixer
     npx tailwindcss init -p
+    npm install -D vite
     ```
 
 3. Start development server
