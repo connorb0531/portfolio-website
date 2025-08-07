@@ -15,6 +15,7 @@
     ```bash
     npm install
     npm install -D tailwindcss postcss autoprefixer
+    npm install @iconify/react @iconify-icons/logos
     npx tailwindcss init -p
     npm install -D vite
     ```

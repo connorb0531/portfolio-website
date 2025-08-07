@@ -35,10 +35,12 @@ export default function Home() {
 
         {/* Slightly smaller buttons */}
         <div className="flex space-x-4 py-6 text-md">
-          <button className="px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition">
+          <a href="/ConnorBuckley_Resume.pdf"
+          download
+          className="px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition">
             Resume
-          </button>
-          <a href="#projects" className="px-4 py-2 bg-slate-500 text-white rounded-lg shadow hover:opacity-90 transition">
+          </a>
+          <a href="#about" className="px-4 py-2 bg-slate-500 text-white rounded-lg shadow hover:opacity-90 transition">
             View my work
           </a>
           <a href="#contact" className="px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition">

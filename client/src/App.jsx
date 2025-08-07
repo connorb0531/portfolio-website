@@ -6,13 +6,13 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="scroll-smooth">
+    <main className="scroll-smooth scroll-pt-20">
       <section id="home" className="min-h-screen"><Home /></section>
-      <div className="sticky top-0 z-50"><Navbar /></div>
-      <section id="about" className="min-h-screen"><About /></section>
-      <section id="projects" className="min-h-screen"><Projects /></section>
+      <nav id="navbar" className="sticky top-0 z-50"><Navbar /></nav>
+      <section id="about" className="min-h-screen pt-20"><About /></section>
+      <section id="projects" className="min-h-screen pt-20"><Projects /></section>
       <section id="contact" className="min-h-screen"><Contact /></section>
-    </div>
+    </main>
   );
 }
 
