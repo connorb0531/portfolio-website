@@ -69,7 +69,7 @@ export default function ProjectSection({ title, blurb, images = [], link, revers
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:text-slate-700 transition"
+                className="inline-block px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition"
               >
                 View Project →
               </a>
