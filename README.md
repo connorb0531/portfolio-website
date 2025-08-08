@@ -16,6 +16,7 @@
     npm install
     npm install -D tailwindcss postcss autoprefixer
     npm install @iconify/react @iconify-icons/logos
+    npm install pixi.js
     npx tailwindcss init -p
     npm install -D vite
     ```
