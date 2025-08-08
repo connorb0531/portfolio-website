@@ -2,7 +2,7 @@ import TechStack from "../components/TechStack";
 
 export default function About() {
     return (
-        <div id="about" className="min-h-screen px-2 py-12 max-w-screen-lg mx-auto">
+        <div id="about" className="min-h-screen px-2 py-6 max-w-screen-lg mx-auto">
             <h2 className="text-4xl font-bold text-center pb-20">
                 About    
             </h2>
@@ -18,10 +18,10 @@ export default function About() {
                         />
                     </div>
                     <p className="text-lg leading-relaxed text-left px-5">
-                        I'm a computer science student at San José State University with a passion for physics-based simulations and data modeling.
-                        After earning my Associate Degree for Transfer in Computer Science from San Diego Mesa College,
-                        I've focused on applying computational tools and AI/ML to improve modeling in astrophysics, robotics, and quantum systems.
-                        I value teamwork, clear communication, and learning from challenges, and this portfolio highlights my journey from self-taught programming to building real-world tools and simulations.
+                        I'm a computer science student at San José State University with an interest in physics, simulations, and data modeling.
+                        After earning my Associate Degree for Transfer in CS from San Diego Mesa College, 
+                        I chose the Bay Area location to furhter my ambititions in research and development.
+                        I value teamwork, clear communication, and learning from challenges, and this portfolio highlights my journey so far.
                     </p>    
                 </div>
 

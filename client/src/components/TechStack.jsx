@@ -10,27 +10,26 @@ const stackIcons = [
     { name: 'logos:react', title: 'React' },
     { name: 'logos:spring-icon', title: 'Spring Boot' },
     { name: 'logos:nodejs-icon', title: 'Node.js' },
-    { name: 'logos:express', title: 'Express.js', bg: 'bg-white' }, // custom background
+    { name: 'logos:express', title: 'Express.js', bg: 'bg-gray-300' },
     { name: 'logos:mongodb-icon', title: 'MongoDB' },
     { name: 'logos:git-icon', title: 'Git' },
 ];
 
 export default function TechStack() {
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 place-items-center flex py-8">
+        <div className="grid grid-cols-3 gap-12 place-items-center pl-6">
             {stackIcons.map((icon, index) => (
-                <div
-                    key={index}
-                    className={`flex items-center justify-center p-2 rounded-full ${
-                        icon.bg || ''
-                    }`}
-                    title={icon.title}
-                >
-                    <Icon
-                        icon={icon.name}
-                        width="48"
-                        height="48"
-                    />
+                <div key={index} className="group flex flex-col items-center">
+                    {/* Circle only for icon */}
+                    <div
+                        className={`flex items-center justify-center w-16 h-16 rounded-full transition-transform duration-300 hover:scale-125 ${icon.bg || ''}`}
+                    >
+                        <Icon icon={icon.name} width="48" height="48" />
+                    </div>
+                    {/* Title below, hidden until hover */}
+                    <span className="mt-2 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100">
+                        {icon.title}
+                    </span>
                 </div>
             ))}
         </div>
