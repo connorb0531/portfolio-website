@@ -8,12 +8,12 @@ export default function Home() {
         id="home-hero"
         className="relative flex justify-center items-center h-screen bg-custom-dark-grey text-white"
       >
-        {/* Canvas overlays the hero; anchor to inner content */}
+        {/* PIXI canvas orbits around the inner content */}
         <PixelWalkCanvas
-          targetId="home-hero"
+          containerId="home-hero"
           anchorId="hero-content"
-          padX={80}     
-          padY={80}     
+          padX={80}
+          padY={80}
           scale={6}
           walkFps={4}
           speed={120}
@@ -39,7 +39,11 @@ export default function Home() {
           </div>
 
           <div className="flex space-x-4 py-6 text-md">
-            <a href="/ConnorBuckley_Resume.pdf" download className="flex items-center gap-2 px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition">
+            <a
+              href="/ConnorBuckley_Resume.pdf"
+              download
+              className="flex items-center gap-2 px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition"
+            >
               <Icon icon="mdi:download" width="20" height="20" />
               Resume
             </a>
