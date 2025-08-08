@@ -3,6 +3,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <section id="about" className="min-h-screen pt-20"><About /></section>
       <section id="projects" className="min-h-screen pt-20"><Projects /></section>
       <section id="contact" className="min-h-screen"><Contact /></section>
+      <footer><Footer /></footer>
     </main>
   );
 }
