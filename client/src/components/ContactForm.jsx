@@ -43,9 +43,9 @@ export default function ContactForm() {
   }, [submitted]);
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block mb-1">Name</label>
+    <div className="flex justify-center w-full">
+      <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
+        <label htmlFor="name" className="sr-only">Name</label>
         <input
           id="name"
           name="name"
@@ -53,12 +53,11 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-600 rounded bg-transparent text-white"
+          placeholder="Name"
+          className="w-full px-4 py-2 rounded bg-navbar-grey text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30"
         />
-      </div>
 
-      <div>
-        <label htmlFor="email" className="block mb-1">Email</label>
+        <label htmlFor="email" className="sr-only">Email</label>
         <input
           id="email"
           name="email"
@@ -66,12 +65,11 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-600 rounded bg-transparent text-white"
+          placeholder="Email"
+          className="w-full px-4 py-2 rounded bg-navbar-grey text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30"
         />
-      </div>
 
-      <div>
-        <label htmlFor="message" className="block mb-1">Message</label>
+        <label htmlFor="message" className="sr-only">Message</label>
         <textarea
           id="message"
           name="message"
@@ -79,20 +77,23 @@ export default function ContactForm() {
           required
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-600 rounded bg-transparent text-white"
+          placeholder="Message"
+          className="w-full px-4 py-2 rounded bg-navbar-grey text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30"
         />
-      </div>
 
-      {error && <p className="text-red-500">{error}</p>}
-      {submitted && <p className="text-green-500">Message sent. Thank you!</p>}
+        {error && <p className="text-red-500">{error}</p>}
+        {submitted && <p className="text-green-500">Message sent. Thank you!</p>}
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition px-6 py-2"
-      >
-        {loading ? 'Sending...' : 'Send'}
-      </button>
-    </form>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition px-6 py-2 disabled:opacity-60"
+          >
+            {loading ? 'Sending...' : 'Send'}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
