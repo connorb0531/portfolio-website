@@ -12,7 +12,7 @@ export default function Home() {
         <PixelWalkCanvas
           containerId="home-hero"
           anchorId="hero-content"
-          padX={80}
+          padX={90}
           padY={80}
           scale={6}
           walkFps={4}
@@ -31,9 +31,6 @@ export default function Home() {
                 <span className="text-yellow-400">J</span>
                 <span className="text-blue-600">S</span>
                 <span className="text-yellow-400">U</span>
-                <span className="absolute top-0 left-full whitespace-nowrap opacity-0 translate-x-0 text-white group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 pointer-events-none">
-                  ... Go Spartans!
-                </span>
               </span>
             </h2>
           </div>
