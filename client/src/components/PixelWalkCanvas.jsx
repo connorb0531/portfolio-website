@@ -21,8 +21,8 @@ export default function PixelWalkCanvas(props) {
     walkFps,
 
     // chase/return config (defaults keep the deps array length stable)
-    chaseRadius   = 140,  // start chasing when within this distance (px)
-    releaseRadius = 200,  // stop chasing when farther than this (px) or mouse leaves
+    chaseRadius   = 280,  // start chasing when within this distance (px)
+    releaseRadius = 325,  // stop chasing when farther than this (px) or mouse leaves
     chaseSpeed    = 180,  // px/sec during chase
     returnSpeed   = 220,  // px/sec when returning to the path
   } = props;
