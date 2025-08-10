@@ -1,45 +1,38 @@
-## Dev Setup
+# Connor Buckley – Portfolio Website
 
-### Requirements
+A personal portfolio website showcasing my projects and skill as a Computer Science student.  
+Built with **React** and styled using **Tailwind CSS**, featuring interactive animations powered by **PixiJS**.
 
-[Node.js](https://nodejs.org/) (v18 or later recommended)
+<p align="center">
+  <img src="client/public/assets/PortfolioScreenshot2.png" alt="Portfolio Website Hero Page" width="500"/>
+</p>
+<p align="center">
+  <img src="client/public/assets/PortfolioScreenshot1.png" alt="Portfolio Website Project" width="500"/>
+</p>
 
-1. Clone the repository
+## Live Link
+[Portfolio Website](https://connorbuckley.dev)
 
-   ```bash
-   git clone https://github.com/connorb0531/portfolio-website.git
-   cd portfolio-website
-   ````
-2. Install dependencies
+## Features
+- Responsive design for desktop and mobile
+- Interactive hero section with animated sprite (PixiJS)
+- Smooth navigation between sections
+- Projects showcase with descriptions and tech stacks
+- Contact form backend powered
 
-    ```bash
-    npm install
-    npm install -D tailwindcss postcss autoprefixer
-    npm install @iconify/react @iconify-icons/logos
-    npm install pixi.js
-    npx tailwindcss init -p
-    npm install -D vite
-    ```
+## Tech Stack
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- PixiJS (for animations)
 
-3. Setup environment variables
+### Backend
+- Node.js
+- Express.js
+- Nodemailer (email handling)
 
-    Create a `.env` file inside `client` directory:
+## Deployment
+- Frontend & Backend: Render
 
-    ```servclienter/.env:
-   VITE_BACKEND_URL= 
-    ```
-
-    Create a `.env` file inside `server` directory:
-
-    ```server/.env:
-    VITE_PORT=
-    FRONTEND_URL=
-    VITE_EMAIL_USER=
-    VITE_EMAIL_PASS=
-    ```
-
-4. Start development server
-    ```bash
-    npm run dev
-    ```
-
+## License
+MIT License
