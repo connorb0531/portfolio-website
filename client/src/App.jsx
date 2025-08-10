@@ -12,7 +12,7 @@ function App() {
       <nav id="navbar" className="sticky top-0 z-50"><Navbar /></nav>
       <section id="about" className="min-h-screen pt-20"><About /></section>
       <section id="projects" className="min-h-screen pt-20"><Projects /></section>
-      <section id="contact" className="min-h-screen"><Contact /></section>
+      <section id="contact" className="min-h-[80vh]"><Contact /></section>
       <footer><Footer /></footer>
     </main>
   );
