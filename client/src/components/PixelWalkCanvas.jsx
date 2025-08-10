@@ -11,7 +11,9 @@ const IMG = {
 
 export default function PixelWalkCanvas(props) {
   // accept legacy prop name too (no warnings)
-  const containerId = props.containerId ?? props.targetId;
+  const containerId   = props.containerId ?? props.targetId; // where the canvas mounts (e.g., "pixi-layer")
+  const listenTargetId = props.listenTargetId;               // where we listen for pointer events (e.g., "home-hero")
+
   const {
     anchorId,
     padX,
@@ -28,9 +30,11 @@ export default function PixelWalkCanvas(props) {
   } = props;
 
   useEffect(() => {
-    const container = containerId ? document.getElementById(containerId) : null;
+    const container = containerId ? document.getElementById(containerId) : null;     // canvas host (on top, pointer-events-none)
+    const listenEl  = listenTargetId ? document.getElementById(listenTargetId) : null; // pointer source (underneath)
     const anchorEl  = anchorId ? document.getElementById(anchorId) : null;
-    if (!container || !anchorEl) return;
+
+    if (!container || !listenEl || !anchorEl) return;
 
     let app;
     let destroyed = false;
@@ -52,13 +56,13 @@ export default function PixelWalkCanvas(props) {
       });
       if (destroyed) return;
 
-      // overlay canvas
+      // mount canvas into the container (which is visually above content)
       const canvas = app.canvas;
       canvas.style.position = "absolute";
       canvas.style.inset = "0";
-      canvas.style.pointerEvents = "none"; // allow container to receive pointer events
+      canvas.style.pointerEvents = "none"; // NEVER eat clicks/taps
       canvas.style.imageRendering = "pixelated";
-      canvas.style.zIndex = "1";
+      canvas.style.zIndex = "0"; // parent controls stacking (e.g., z-20)
       container.appendChild(canvas);
 
       // resize observers
@@ -71,16 +75,20 @@ export default function PixelWalkCanvas(props) {
       roAnchor = new ResizeObserver(() => {});
       roAnchor.observe(anchorEl);
 
-      // mouse tracking relative to container
+      // pointer tracking on the *listen target* (under the canvas)
       const onPointerMove = (e) => {
-        const c = container.getBoundingClientRect();
-        mouse.x = e.clientX - c.left;
-        mouse.y = e.clientY - c.top;
-        mouse.inside = true;
+        const r = listenEl.getBoundingClientRect();
+        mouse.x = e.clientX - r.left;
+        mouse.y = e.clientY - r.top;
+        mouse.inside =
+          e.clientX >= r.left &&
+          e.clientX <= r.right &&
+          e.clientY >= r.top &&
+          e.clientY <= r.bottom;
       };
       const onPointerLeave = () => { mouse.inside = false; };
-      container.addEventListener("pointermove", onPointerMove);
-      container.addEventListener("pointerleave", onPointerLeave);
+      listenEl.addEventListener("pointermove", onPointerMove);
+      listenEl.addEventListener("pointerleave", onPointerLeave);
 
       // load textures
       const [downTex, upTex, leftTex, rightTex] = await Promise.all([
@@ -91,8 +99,10 @@ export default function PixelWalkCanvas(props) {
       ]);
       if (destroyed) return;
 
-      // Pixi v8: nearest sampling (no baseTexture / deprecated draw modes)
-      for (const t of [downTex, upTex, leftTex, rightTex]) if (t?.source) t.source.scaleMode = 'nearest';
+      // Pixi v8: nearest sampling (no baseTexture tuning needed beyond source)
+      for (const t of [downTex, upTex, leftTex, rightTex]) {
+        if (t?.source) t.source.scaleMode = "nearest";
+      }
 
       // slice frames (tiny inset prevents bleeding when scaled)
       const FRAME = 17, EPS = 0.01;
@@ -130,14 +140,14 @@ export default function PixelWalkCanvas(props) {
       sprite.play();
       app.stage.addChild(sprite);
 
-      // rect around anchor + helpers
+      // rect around anchor + helpers (computed in listenEl's coordinate space)
       const rectAroundAnchor = () => {
-        const c = container.getBoundingClientRect();
-        const a = anchorEl.getBoundingClientRect();
-        const cx = Math.round(a.left - c.left + a.width  / 2);
-        const cy = Math.round(a.top  - c.top  + a.height / 2);
-        const sideW = Math.max(1, Math.round(a.width  + 2 * (padX ?? 40)));
-        const sideH = Math.max(1, Math.round(a.height + 2 * (padY ?? 24)));
+        const L = listenEl.getBoundingClientRect();
+        const A = anchorEl.getBoundingClientRect();
+        const cx = Math.round(A.left - L.left + A.width  / 2);
+        const cy = Math.round(A.top  - L.top  + A.height / 2);
+        const sideW = Math.max(1, Math.round(A.width  + 2 * (padX ?? 40)));
+        const sideH = Math.max(1, Math.round(A.height + 2 * (padY ?? 24)));
         return { cx, cy, sideW, sideH };
       };
 
@@ -281,10 +291,18 @@ export default function PixelWalkCanvas(props) {
       destroyed = true;
       try { roContainer?.disconnect(); } catch {}
       try { roAnchor?.disconnect(); } catch {}
-      try { /* best-effort cleanup if app exists */ app?.destroy?.(true); } catch {}
+      try { app?.destroy?.(true); } catch {}
+      try {
+        const c = container?.querySelector("canvas");
+        if (c && c.parentNode === container) container.removeChild(c);
+      } catch {}
+      try {
+        listenEl?.removeEventListener("pointermove", () => {});
+        listenEl?.removeEventListener("pointerleave", () => {});
+      } catch {}
     };
   }, [
-    containerId, anchorId, padX, padY, scale, speed, walkFps,
+    containerId, listenTargetId, anchorId, padX, padY, scale, speed, walkFps,
     chaseRadius, releaseRadius, chaseSpeed, returnSpeed
   ]);
 

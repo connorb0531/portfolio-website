@@ -8,9 +8,11 @@ export default function Home() {
         id="home-hero"
         className="relative flex justify-center items-center h-screen bg-custom-dark-grey text-white"
       >
-        {/* PIXI canvas orbits around the inner content */}
+        {/* PIXI on top visually, but doesn't block clicks */}
+        <div id="pixi-layer" className="absolute inset-0 pointer-events-none z-20" />
         <PixelWalkCanvas
-          containerId="home-hero"
+          containerId="pixi-layer"     
+          listenTargetId="home-hero"   
           anchorId="hero-content"
           padX={90}
           padY={80}
@@ -19,10 +21,15 @@ export default function Home() {
           speed={120}
         />
 
-        <div id="hero-content" className="flex flex-col items-center space-y-3 text-center">
+        {/* Foreground content sits *under* the pixels visually */}
+        <div
+          id="hero-content"
+          className="relative z-10 flex flex-col items-center space-y-3 text-center"
+        >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Hello, I'm Connor Buckley
           </h1>
+
           <div className="text-xl sm:text-2xl md:text-3xl">
             <h2>
               Computer Science major at{' '}
@@ -35,19 +42,28 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="flex space-x-4 py-6 text-md">
+          {/* Buttons — smaller on small screens */}
+          <div className="flex flex-wrap justify-center gap-3 py-6">
             <a
               href="/ConnorBuckley_Resume.pdf"
               download
-              className="flex items-center gap-2 px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition"
+              className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition text-sm sm:text-base"
             >
-              <Icon icon="mdi:download" width="20" height="20" />
+              <Icon icon="mdi:download" width="18" height="18" className="sm:w-5 sm:h-5" />
               Resume
             </a>
-            <a href="#about" className="px-4 py-2 bg-slate-500 text-white rounded-lg shadow hover:opacity-90 transition">
+
+            <a
+              href="#about"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-500 text-white rounded-lg shadow hover:opacity-90 transition text-sm sm:text-base"
+            >
               View my work
             </a>
-            <a href="#contact" className="px-4 py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition">
+
+            <a
+              href="#contact"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition text-sm sm:text-base"
+            >
               Contact Me
             </a>
           </div>
