@@ -33,7 +33,8 @@
 
     ```server/.env:
     VITE_PORT=
-    VITE_EMAIL_USER=cbuckley144@gmail.com
+    FRONTEND_URL=
+    VITE_EMAIL_USER=
     VITE_EMAIL_PASS=
     ```
 
