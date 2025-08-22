@@ -18,9 +18,9 @@ export default function About() {
                         />
                     </div>
                     <p className="text-lg leading-relaxed text-left px-5">
-                        I'm a computer science student at San José State University with an interest in physics, simulations, and data modeling.
+                        I'm a computer science student at San José State University with an interest in machine learning, physics simulations, and data modeling.
                         After earning my Associate Degree for Transfer in CS from San Diego Mesa College, 
-                        I chose the Bay Area location to furhter my ambititions in research and development.
+                        I chose the Bay Area location to further my ambititions in research and development.
                         I value teamwork, clear communication, and learning from challenges, and this portfolio highlights my journey so far.
                     </p>    
                 </div>
