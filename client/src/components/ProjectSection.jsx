@@ -43,7 +43,6 @@ export default function ProjectSection({
 
         {/* IMAGE */}
         <div className="w-full lg:w-1/2">
-          {/* remove `hidden lg:flex` */}
           <div className="flex items-center justify-center">
             <img
               src={image}
