@@ -13,7 +13,7 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             className="hover:text-gray-400"
                         >
-                            <Icon icon="mdi:github" width="50" height="50" />
+                            <Icon icon="mdi:github" width="70" height="70" />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/connor-buckley-b36772272"
@@ -21,7 +21,7 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             className="hover:text-gray-400"
                         >
-                            <Icon icon="mdi:linkedin" width="50" height="50" />
+                            <Icon icon="mdi:linkedin" width="70" height="70" />
                         </a>
                     </div>
 
