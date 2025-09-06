@@ -19,7 +19,7 @@ const stackIcons = [
 
 export default function TechStack() {
     return (
-        <div className="grid grid-cols-4 gap-8 place-items-center pl-6">
+        <div className="grid grid-cols-4 gap-8 place-items-center px-6">
             {stackIcons.map((icon, index) => (
                 <div key={index} className="group flex flex-col items-center">
                     {/* Circle only for icon */}
