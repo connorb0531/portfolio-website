@@ -19,6 +19,7 @@
     npm install pixi.js
     npx tailwindcss init -p
     npm install -D vite
+    npm i framer-motion
     ```
 
 3. Setup environment variables

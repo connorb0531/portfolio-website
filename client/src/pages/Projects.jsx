@@ -11,7 +11,14 @@ export default function Projects() {
 
       <main className="snap-y snap-mandatory">
         {projects.map((p, i) => (
-          <ProjectSection key={p.title} {...p} reverse={i % 2 === 1} />
+          <ProjectSection
+            key={p.id}
+            index={i + 1}        
+            title={p.title}
+            blurb={p.blurb}
+            image={p.image}
+            link={p.link}
+          />
         ))}
       </main>
     </div>
