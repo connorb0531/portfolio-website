@@ -9,14 +9,14 @@ export const projects = [
     {
         title: "Construction Website",
         blurb:
-            "Full-stack site with MongoDB, Express, React, Node. Deployed on Render.",
+            "Website for a local construction business to showcasing previous services/projects. Full-stack site with MongoDB, Express, React, Node. Deployed on Render.",
         image: "/projects/construction-website1.png",
         link: "https://tbuckdev.com",
     },
     {
         title: "FitBit Conntected Lock",
         blurb:
-            "Solenoid lock using Fitbit API and Raspberry Pi to unlock a door when activity goals (steps, distance, calories) are achieved.",
+            "Solenoid lock using Fitbit API and Raspberry Pi to unlock a door when activity goals (steps, distance, calories) are tracked and achieved on FitBit watch.",
         image: "/projects/fitbit-lock1.jpeg",
         link: "https://github.com/connorb0531/FitBit-Lock",
     },
