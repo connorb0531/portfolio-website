@@ -45,7 +45,7 @@ export default function Home() {
           {/* Buttons — smaller on small screens */}
           <div className="flex flex-wrap justify-center gap-3 py-6">
             <a
-              href="/ConnorBuckley_Resume_v3.pdf"
+              href="/Connor Buckley Resume v4.pdf"
               download
               className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-50 text-custom-dark-grey rounded-lg shadow hover:opacity-90 transition text-sm sm:text-base"
             >
